@@ -1,0 +1,43 @@
+{% load static %}
+<body>
+<header class="top-navbar">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        
+        <div class="container  d-flex justify-content-end">
+            <button class="navbar-toggler md-d-flex justify-content-end" type="button" data-toggle="collapse" data-target="#navbars-rs-food" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            
+            <div class="collapse navbar-collapse " id="navbars-rs-food">
+               
+                <ul class="navbar-nav ml-auto d-flex justify-content-start">
+                    <li class="nav-item active d-flex justify-content-start"><a class="nav-link" href="{% url 'food:foodlist' %}">خانه</a></li> 
+                    <li class="nav-item d-flex justify-content-start"><a class="nav-link" href="#">منو</a></li>
+                    <li class="nav-item d-flex justify-content-start"><a class="nav-link" href="about.html">درباره ما</a></li>
+                    <li class="nav-item dropdown d-flex justify-content-start">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">صفحات</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown-a">
+                            <a class="dropdown-item" href="#">ثبت نام</a>
+                            <a class="dropdown-item" href="stuff.html">Stuff</a>
+                            <a class="dropdown-item" href="gallery.html">عکسها</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown d-flex justify-content-start">
+                        <li class="nav-item d-flex justify-content-start">
+							<a class="nav-link " href="#" >وبلاگ</a>
+						</li>
+                    </li>
+                    <li class="nav-item d-flex justify-content-start"><a class="nav-link" href="contact.html">  ارتباط </a></li>
+                </ul>
+                <a class="navbar-brand d-flex justify-content-start" href="index.html">
+                   <img src="{% static 'images/logo.png' %}" alt="" />
+                </a>
+            </div>
+            
+        </div>
+       
+    </nav>
+     
+</header>
+

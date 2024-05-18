@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start slides -->
+<div id="slides" class="cover-slides">
+    <ul class="slides-container">
+         {% for food in foods %}
+          <li class="text-center">
+            <img src="{{food.image.url}}" alt="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="m-b-20"><strong>خوش امدید <br> به رستوران من</strong></h1>
+                        <p class="m-b-40"> متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص </p>
+                        <p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">رزرو کردن</a></p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {% endfor %} 
+        
+
+    </ul>
+    <div class="slides-navigation">
+        <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+    </div>
+</div>
+<!-- End slides -->
+
+<!-- Start About -->
+<div class="about-section-box">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-6 col-sm-12 text-center">
+                <div class="inner-column rtl">
+                    <h1>  خوش امدید <span>به رستوران من </span></h1>
+
+                    <h4>توضیحات کوتاه</h4>
+                    <p>نکته بعدی در مورد متن ساختگی لورم ایپسوم این است که بعضی از طراحان وبسایت و گرافیست کاران بعد از آنکه قالب و محتوای مورد و یا با متن دیگری جایگزین کنند. متن لورم ایپسوم هنوز وجود دارد و حذف نشده است که این نشان دهنده بی توجهی طراحان است. </p>
+                    <p>نکته بعدی در مورد متن ساختگی لورم ایپسوم این است که بعضی از طراحان وبسایت و گرافیست کاران بعد از آنکه قالب و محتوای مورد نظرشون را ایجاد کردند از یاد می‌برند که متن لورم را از قسمتهای مختلف سایت حذف کنند و یا با متن دیگری جایگزین کنند. 
+                    </p>
+                    <a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <img src="{% static 'images/about-img.jpg' %}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End About -->
+
+<!-- Start QT -->
+<div class="qt-box qt-background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 ml-auto mr-auto text-left">
+                <p class="lead ">
+                    " از آنجا که لورم ایپسوم، شباهت زیادی به متن های واقعی دارد، طراحان معمولا از لورم ایپسوم استفاده میکنند "
+                </p>
+                <span class="lead">  احمد دانسی  </span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End QT -->
+
+<!-- Start Menu -->
+<div class="menu-box">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-title text-center">
+                    <h2>منوی مخصوص</h2>
+                    <p>  طراحان سایت هنگام طراحی قالب سایت معمولا با این موضوع رو برو هستند    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="special-menu text-center">
+                    <div class="button-group filter-button-group">
+
+                        <!-- <a href="{% url 'food:foodlist' %}" ><button class="active" data-filter="*">All</button></a> -->
+                    
+                        {% for cate in category %}
+                            <a href="{% url 'food:foodcategory' cate.id %}"><button  >{{cate.name}}</button></a>
+                        {% endfor %}
+        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row special-list  ">
+            <!-- special- -->
+            {% for food in food2 %}
+                <div class="col-lg-4 col-md-6 special-grid d-flex justify-content-start  ">
+                    <div class="gallery-single ">
+                        <img src="{{food.image.url}}" class="img-fluid fix "  alt="Image" style="width: 500px;height: 300px;">
+                        <div class="why-text text-start ">
+                            <h4>{{food.name}}</h4>
+                            <p>{{food.discription}}</p>
+                            <h5>{{food.price}}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Menu -->
+
+
+
+<!-- Start Gallery -->
+<div class="gallery-box">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="heading-title text-center">
+                    <h2>Gallery</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                </div>
+            </div>
+        </div>
+        <div class="tz-gallery">
+            <div class="row">
+
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <a class="lightbox" href="{% static 'images/gallery-img-01.jpg' %}">
+                        <img class="img-fluid" src="{% static 'images/gallery-img-01.jpg' %}" alt="Gallery Images">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <a class="lightbox" href="{% static 'images/gallery-img-02.jpg' %}">
+                        <img class="img-fluid" src="{% static 'images/gallery-img-02.jpg' %}" alt="Gallery Images">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <a class="lightbox" href="{% static 'images/gallery-img-03.jpg' %}">
+                        <img class="img-fluid" src="{% static 'images/gallery-img-03.jpg' %}" alt="Gallery Images">
+                    </a>
+                </div>
+                <div class="col-sm-12 col-md-4 col-lg-4">
+                    <a class="lightbox" href="{% static 'images/gallery-img-04.jpg' %}">
+                        <img class="img-fluid" src="{% static 'images/gallery-img-04.jpg' %}" alt="Gallery Images">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <a class="lightbox" href="{% static 'images/gallery-img-05.jpg' %}">
+                        <img class="img-fluid" src="{% static 'images/gallery-img-05.jpg' %}" alt="Gallery Images">
+                    </a>
+                </div>
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <a class="lightbox" href="{% static 'images/gallery-img-06.jpg' %}">
+                        <img class="img-fluid" src="{% static 'images/gallery-img-06.jpg' %}" alt="Gallery Images">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Gallery -->
+
+<!-- Start Customer Reviews -->
+
+<!-- End Customer Reviews -->
+
+
+{% endblock content %}
+
+<!-- <h1>food list view</h1>
+
+<br>
+
+{{message}}
+
+<br>
+{% for food in foods %}
+    {{food.name}}
+    <br>
+{% endfor %} -->
