@@ -39,7 +39,7 @@ class FoodModelTest(TestCase):
         self.assertEqual(food1.price,25)
 
 
-#---test url---
+#---test--fod_cate_item_view ---url---
 
 class TestView(TestCase):
     def test_fod_cate_item_view(self):
@@ -48,4 +48,12 @@ class TestView(TestCase):
         path=self.client.get("/food/", kwargs={"id": 1})
         self.assertEqual(path.status_code,200)
         
+#---test--menu_view ---url---
 
+
+class TestMenuView(TestCase):
+    def test_menu_view(self):
+        path=self.client.get('/food/menu/')
+        self.assertEqual(path.status_code,200)
+        path=self.client.get("/food/menu/", kwargs={"id": 11})
+        self.assertEqual(path.status_code,200)

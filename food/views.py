@@ -5,7 +5,7 @@ from django.views.generic import ListView
 
 from .models import Food,CategoryFood
 
-
+#show  category and items //food 
 def fod_cate_item_view(request,id=None):
     food2=None
     category2=None
@@ -17,7 +17,20 @@ def fod_cate_item_view(request,id=None):
     context={"food2":food2,"category":category,"foods":foods,"category2":category2}
     return render(request,"food/food.html",context)
 
+#<--menu-->
 
+def menu_view(request,id=None):
+    food2=None
+    category2=None
+    if id:
+        category2=CategoryFood.objects.get(id=id)
+        food2=Food.objects.filter(category=category2)
+    category=CategoryFood.objects.all()
+    foods=Food.objects.all()
+    context={"food2":food2,"category":category,"foods":foods,"category2":category2}
+    return render(request,"food/menu.html",context)
+    
+    
 
 
 
