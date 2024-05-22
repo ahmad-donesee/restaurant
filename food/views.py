@@ -29,7 +29,12 @@ def menu_view(request,id=None):
     foods=Food.objects.all()
     context={"food2":food2,"category":category,"foods":foods,"category2":category2}
     return render(request,"food/menu.html",context)
-    
+
+
+
+
+def about_us(request):
+    return render(request,"food/about_us.html",{})
     
 
 
