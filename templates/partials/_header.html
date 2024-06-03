@@ -18,9 +18,9 @@
                     <li class="nav-item dropdown d-flex justify-content-start">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">صفحات</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="#">ثبت نام</a>
-                            <a class="dropdown-item" href="stuff.html">    کارمندان  </a>
-                            <a class="dropdown-item" href="gallery.html">عکسها</a>
+                            <a class="dropdown-item" href="{% url 'reservation:reserve_form' %}">ثبت نام</a>
+                            <a class="dropdown-item" href="#">    کارمندان  </a>
+                            <a class="dropdown-item" href="#">عکسها</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown d-flex justify-content-start">
@@ -28,7 +28,7 @@
 							<a class="nav-link " href="#" >وبلاگ</a>
 						</li>
                     </li>
-                    <li class="nav-item d-flex justify-content-start"><a class="nav-link" href="contact.html">  ارتباط </a></li>
+                    <li class="nav-item d-flex justify-content-start"><a class="nav-link" href="{% url 'food:suggest' %}">  ارتباط </a></li>
                 </ul>
                 <a class="navbar-brand d-flex justify-content-start" href="index.html">
                    <img src="{% static 'images/logo.png' %}" alt="" />

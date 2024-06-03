@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Food,CategoryFood
+from .models import Food,CategoryFood,SuggestionForm
 # Register your models here.
 
 @admin.register(CategoryFood)
@@ -11,3 +11,9 @@ class CategoryFoodAdmin(admin.ModelAdmin):
 class FoodAdmin(admin.ModelAdmin):
     list_display=["name","price","pub_date"]
     list_filter=["pub_date"]
+    
+@admin.register(SuggestionForm)
+class FoodAdmin(admin.ModelAdmin):
+    list_display=["name","email"]
+    
+    

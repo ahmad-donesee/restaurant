@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+	
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>رزرو کردن</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+	
+	<!-- Start Reservation -->
+	<div class="reservation-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>رزرو کردن</h2>
+						<p>   این که رزرو کردن را در رزرو ارسال اولویت اوال یییام  </p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 col-xs-12">
+					<div class="contact-block ">
+						<!--  "-->
+						 <!--<form id="contactForm" method="POST">
+							{% csrf_token %}
+							<div class="row">
+								<div class="col-md-6">
+									<h3>Book a table</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input id="input_date" class="datepicker picker__input form-control" name="date" type="text" value="" equired data-error="Please enter Date">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input id="input_time" class="time form-control picker__input" required data-error="Please enter time">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<select class="custom-select d-block form-control" id="person" required data-error="Please select Person">
+											  <option disabled selected>Select Person*</option>
+											  <option value="1">1</option>
+											  <option value="2">2</option>
+											  <option value="3">3</option>
+											  <option value="4">4</option>
+											  <option value="5">5</option>
+											  <option value="6">6</option>
+											  <option value="7">7</option>
+											</select>
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h3>Contact Details</h3>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+											<div class="help-block with-errors"></div>
+										</div>                                 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+									<div class="col-md-12">
+										<div class="form-group">
+											<input type="text" placeholder="Your Numbar" id="phone" class="form-control" name="phone" required data-error="Please enter your Numbar">
+											<div class="help-block with-errors"></div>
+										</div> 
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="submit-button text-center">
+										<button class="btn btn-common" id="submit" type="submit">submit</button>
+										<div id="msgSubmit" class="h3 text-center hidden"></div> 
+										<div class="clearfix"></div> 
+									</div>
+								</div>
+							</div>            
+						</form> -->
+						<div class="container d-flex justify-content-center p-5 xm-d-flex justify-content-end m-5">
+							<div class="row" id="row">
+								<div class="col-lg-12 d-flex justify-content-center xm-d-flex xm-justify-content-start ">
+									<div >
+										<form action=""   method="post">
+											{% csrf_token %}
+											<div class="form-group " dir="rtl">
+												
+												<input type="text" dir="rtl"  name="name"  placeholder="نام....  " required>
+											  </div>
+											  <div class="form-group" dir="rtl">
+												
+												<input type="email" dir="rtl"  name="email" id="d1" placeholder=".....ایمیل" required>
+											  </div>
+											  <div class="form-group" dir="rtl">
+												
+												<input type="number" dir="rtl"  name="number" id="d1" placeholder=".....تعداد" required>
+											  </div>
+											  <div class="form-group" dir="rtl">
+												
+												<input type="text" dir="ltr"  name="phone" id="d1" placeholder=".....شماره تلفن" required>
+											  </div>
+											  <div class="form-group" dir="rtl">
+												
+												<input type="date" dir="rtl"  name="date" id="d1" placeholder=".....تاریخ" required>
+											  </div>
+											  <div class="form-group" dir="rtl">
+												
+												<input type="time" dir="rtl"  name="time" id="d1" placeholder=".....ساعت" required>
+											  </div>
+											  <div class="d-flex justify-content-center">
+												<button class="btn btn-primary mt-4" type="submit">   ارسال  </button>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<style>
+						#d1::placeholder{
+							
+						
+							text-align:end;
+						}
+						#row{
+							width: 300px;
+						}
+						input{
+							width: 500px;
+						}
+						textarea{
+							width: 500px;
+						}
+					</style>
+						<!-- <form action="" method="POST">
+							{% csrf_token %}
+							{{form.as_p}}
+							<button type="submit">send</button>
+						</form> -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Reservation -->
+	
+	
+
+{% endblock content %}
