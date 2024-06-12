@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+	
+	<!-- Start All Pages -->
+	<div class="all-page-title page-breadcrumb">
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>بلاگ</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End All Pages -->
+	
+	<!-- Start blog details -->
+	<div class="blog-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>بلاگ</h2>
+						<p>مرتبط بگردد تمرکزش از روی کار اصلی برداشته میشود و اینکار زمان بر خواهد بود.</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-8 col-12 blog-sidebar">
+					<div class="right-side-blog">
+						<h3 style="text-align: start;">جستجو</h3>
+						<div class="blog-search-form">
+							<input name="search" placeholder="   جستجوی مقاله  " type="text">
+							<button class="search-btn">
+								<i class="fa fa-search" aria-hidden="true"></i>
+							</button>
+						</div>
+						<h3 style="text-align: start;">   دسته بندی ها  </h3>
+						<div class="blog-categories">
+							<ul style="text-align: start;">
+                                {% for cate in category %}
+                                  <li><a href="#"><span>{{cate.title}}</span></a></li>
+                                {% endfor %}
+								
+							</ul>
+						</div>
+                        <div>
+                            <p style="text-align: start;">نکته بعدی در مورد متن ساختگی لورم ایپسوم این است که بعضی از طراحان وبسایت و گرافیست کاران بعد از آنکه قالب و محتوای مورد نظرشون را ایجاد کردند از یاد می‌برند که متن لورم را از قسمتهای مختلف سایت حذف کنند و یا با متن دیگری جایگزین کنند. به همین دلیل اغلب اوقات ما با وبسایتهایی مواجه می‌شویم که در گوشه و کنار صفحات .</p>
+                        </div>
+
+
+                        
+                        
+                        <h3  style="text-align: start;margin-top: 50px;">   تک های اخیر  </h3>
+						<div class="blog-tag-box">
+							<ul class="list-inline tag-list" style="text-align: start;">
+                                {% for tag in tags %}
+                                  <li class="list-inline-item"><a href="#">{{tag.title}}</a></li>
+                                {% endfor %}
+								
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+
+
+            
+
+				<div class="col-xl-8 col-lg-8 col-12">
+					<div class="blog-inner-details-page">
+						<div class="blog-inner-box">
+							<div class="side-blog-img">
+								<img class="img-fluid" src="{% static 'images/inner-blog-img.jpg' %}" alt="">							
+								<div class="date-blog-up">
+									27 Fab
+								</div>
+							</div>
+
+							<div class="inner-blog-detail details-page" style="text-align: start;">
+								<h3>{{blog.title}}</h3>
+								<ul>
+									<li><i class="zmdi zmdi-account"></i>  نوشته شده توسظ:  <span>{{blog.author}}</span>  </li>
+									<li>|</li>
+									<li><i class="zmdi zmdi-time"></i>زمان : <span>{{blog.created_at}}</span></li>
+								</ul>
+                                <p>{{blog.content}}</p>
+								
+							</div>
+						</div>
+
+
+						<div class="blog-comment-box" style="text-align: start;">
+							<h3>نظرات</h3>
+						{% for comment in comment %}
+						
+						  <div class="comment-item " style="margin-top: 20px;margin-bottom: 40px;">
+							<h3 >{{comment.name}}:</h3>
+								<div class="comment-item-left">
+									<!-- <img src="{% static 'images/avt-img.jpg' %}" alt=""> -->
+								</div>
+								<div class="comment-item-right">
+									<!-- <div class="pull-left">
+										<a href="#">{{comment.name}}</a>
+									</div> -->
+									
+									<div class="des-l">
+										<p>{{comment.message}}</p>
+									</div>
+									<div class="pull-right">
+										<i class="fa fa-clock-o" aria-hidden="true"></i>زمان : <span>{{comment.date}}</span>
+									</div>
+									<!-- <a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a> -->
+								</div>
+							</div>
+							<hr>
+						{% endfor %}
+							
+							<!-- <div class="comment-item children">
+								<div class="comment-item-left">
+									<img src="{% static 'images/avt-img.jpg' %}" alt="">
+								</div>
+								<div class="comment-item-right">
+									<div class="pull-left">
+										<a href="#">Admin</a>
+									</div>
+									<div class="pull-right">
+										<i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>1.30 pm</span>
+									</div>
+									<div class="des-l">
+										<p>Morbi lacinia ultrices lorem id tincidunt. Cras id dui risus. Pellentesque consectetur id mi sed pharetra. Proin imperdiet gravida nisl, sit amet varius urna. In auctor.</p>
+									</div>
+									<a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+								</div>
+							</div>
+							
+							<div class="comment-item">
+								<div class="comment-item-left">
+									<img src="{% static 'images/avt-img.jpg' %}" alt="">
+								</div>
+								<div class="comment-item-right">
+									<div class="pull-left">
+										<a href="#">{{comment.name}}</a>
+									</div>
+									<div class="pull-right">
+										<i class="fa fa-clock-o" aria-hidden="true"></i>Time : <span>{{comment.date}}</span>
+									</div>
+									<div class="des-l">
+										<p>{{comment.message}}</p>
+									</div>
+									<a href="#" class="right-btn-re"><i class="fa fa-reply" aria-hidden="true"></i> Reply</a>
+								</div>
+							</div> -->
+						</div>
+						
+						
+						
+						
+
+
+
+                        <div class="comment-respond-box " style="text-align: start;margin-top:50px;">
+                        <h3 class="mt-5">   نظرات خود را بیان کنید   </h3>
+                        <!-- <form action="" method="POST">
+                            {% csrf_token %}
+								{{form.as_p}}
+
+                            <input type="submit" value="send">
+                        </form> -->
+							<div class="comment-respond-form">
+                                <form action="" id="commentrespondform" class="comment-form-respond row" method="POST">
+                                    {% csrf_token %}
+									<div class="col-lg-6 col-md-6 col-sm-6">
+										<div class="form-group">
+											<input id="name_com" class="form-control" name="name" placeholder="نام" type="text">
+										</div>
+										<div class="form-group " >
+											<input style="text-align: end;" id="email_com" class="form-control " name="email" placeholder="   ایمیل  " type="email">
+										</div>
+									</div>
+									<div class="col-lg-6 col-md-6 col-sm-6">
+										<div class="form-group">
+											<textarea class="form-control" id="textarea_com" name="message" placeholder="  پیام  " rows="2"></textarea>
+										</div>
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12" style="margin-right: 10px;">
+										<button class="btn btn-submit"  type="submit">ارسال نظر</button>
+									</div>
+								</form>
+							</div>
+					
+						</div>
+					</div>
+				</div>
+			
+				
+			
+			</div>
+		</div>
+	</div>
+	<!-- End details -->
+	
+
+
+{% endblock content %}
